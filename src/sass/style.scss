@@ -112,7 +112,7 @@ body {
 		position: relative;
 		height: 400px;
 		width: 100%;
-		background-image: url("/dist/img/jungle_lq.jpg");
+		background-image: url("../img/jungle_lq.jpg");
 		background-size: cover;
 		background-position: center;
 		z-index: 0;
@@ -193,7 +193,7 @@ body {
 		position: relative;
 		height: 300px;
 		width: 100%;
-		background-image: url("/dist/img/girl_lq.jpg");
+		background-image: url("../img/girl_lq.jpg");
 		background-size: cover;
 		background-position: center;
 		z-index: 0;
@@ -404,7 +404,7 @@ footer{
 
 	#home {
 		.hero-img {
-			background-image: url("/dist/img/jungle_hq.jpg");
+			background-image: url("../img/jungle_hq.jpg");
 		}
 		.hero-text {
 			padding-left: 0;
@@ -445,7 +445,7 @@ footer{
 	#adventure {
 		.hero-img {
 			height: 350px;
-			background-image: url("/dist/img/girl_hq.jpg");
+			background-image: url("../img/girl_hq.jpg");
 		}
 
 		.hero-shadow {
