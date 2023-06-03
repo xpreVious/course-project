@@ -1,0 +1,506 @@
+@use "./utilities/_colors.scss" as c;
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-padding-top: 80px;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	background-color: c.$main;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+// NAVBAR
+
+#navbar {
+	position: fixed;
+	width: 100vw;
+	background-color: c.$main;
+	z-index: 100;
+
+	.navbar-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		height: 80px;
+	}
+
+	.logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		color: c.$grey;
+		font-size: 48px;
+		text-decoration: none;
+		cursor: pointer;
+
+		.fa-solid {
+			margin-right: 10px;
+		}
+	}
+
+	.hamburger {
+		position: absolute;
+		top: 18px;
+		right: 8px;
+		padding: 10px;
+		background: none;
+		border: none;
+		cursor: pointer;
+
+		.fa-bars {
+			font-size: 24px;
+			color: c.$grey;
+		}
+	}
+
+	.nav-links {
+		position: fixed;
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		width: 100%;
+		top: 80px;
+		transform: translateX(100%);
+		text-transform: uppercase;
+		background-color: c.$main;
+		z-index: 100;
+		transition: transform 0.5s;
+
+		.nav-link {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 5rem;
+			font-size: 28px;
+			text-decoration: none;
+			color: c.$grey;
+			cursor: pointer;
+		}
+
+		.nav-link:first-child {
+			background-color: c.$black;
+			color: c.$main;
+		}
+	}
+
+	.show {
+		transform: translateX(0);
+		transition: transform 0.5s;
+	}
+}
+
+// SECTION HOME
+
+#home {
+	.hero-img {
+		position: relative;
+		height: 400px;
+		width: 100%;
+		background-image: url("/dist/img/jungle_lq.jpg");
+		background-size: cover;
+		background-position: center;
+		z-index: 0;
+	}
+
+	.hero-shadow {
+		position: absolute;
+		height: 400px;
+		width: 100%;
+		background-color: #0000007e;
+		z-index: -10;
+	}
+
+	.hero-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 20px;
+		font-size: 18px;
+		color: c.$main;
+		height: 100%;
+		z-index: 5;
+	}
+}
+
+// SECTION ABOUT US
+
+#aboutus {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+
+	.section-title {
+		text-align: center;
+		margin: 20px;
+		text-transform: uppercase;
+		font-size: 48px;
+		font-weight: 300;
+
+		h3 {
+			font-weight: lighter;
+		}
+	}
+
+	.section-content {
+		.section-image {
+			img {
+				width: 100vw;
+			}
+		}
+
+		.section-text {
+			display: flex;
+			flex-direction: column;
+			margin-top: 10px;
+			h2 {
+				padding: 10px;
+			}
+
+			p {
+				padding: 10px;
+				line-height: 1.6;
+
+				a {
+					text-decoration: none;
+					color: #000000;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+}
+
+// SECTION ADVENTURE
+
+#adventure {
+	.hero-img {
+		position: relative;
+		height: 300px;
+		width: 100%;
+		background-image: url("/dist/img/girl_lq.jpg");
+		background-size: cover;
+		background-position: center;
+		z-index: 0;
+	}
+
+	.hero-shadow {
+		position: absolute;
+		height: 300px;
+		width: 100%;
+		background-color: #0000007e;
+		z-index: -10;
+	}
+
+	.hero-text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 14px;
+		color: c.$main;
+		height: 100%;
+		z-index: 5;
+	}
+	h2 {
+		padding: 15px;
+		border: 1px solid c.$main;
+	}
+}
+
+//SECTION OFFER
+
+#offer {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+
+	.section-title {
+		text-align: center;
+		margin: 20px;
+		text-transform: uppercase;
+		font-size: 48px;
+		font-weight: 300;
+
+		h3 {
+			font-weight: lighter;
+		}
+	}
+
+	.choose {
+		text-align: center;
+		font-size: 24px;
+	}
+
+	.cards {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.card {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-direction: column;
+			padding: 30px;
+			margin: 30px;
+			height: 400px;
+			width: 300px;
+			border: none;
+			box-shadow: 1px 1px 5px 1px c.$grey;
+			border-radius: 8px;
+
+			h3 {
+				font-size: 32px;
+				font-weight: normal;
+			}
+
+			.fa-check {
+				color: c.$green;
+			}
+
+			.price {
+				font-weight: bold;
+				font-size: 48px;
+			}
+
+			a {
+				text-decoration: none;
+				color: c.$black;
+			}
+
+			td {
+				padding: 5px;
+			}
+
+			.white,
+			.green {
+				height: 30px;
+				width: 150px;
+				border: none;
+				border-radius: 4px;
+				font-size: 18px;
+			}
+
+			.white {
+				background-color: c.$main;
+				box-shadow: 1px 1px 5px 1px c.$grey;
+			}
+
+			.green {
+				background-color: c.$green;
+				box-shadow: 1px 1px 5px 1px c.$green;
+			}
+		}
+	}
+}
+
+// SECTION SITEMAP
+
+#sitemap {
+	.logo {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 10px;
+		color: c.$grey;
+		font-size: 48px;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.info {
+		.aboutus,
+		.ourcompany,
+		.documents {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			a {
+				margin: 5px;
+				text-decoration: none;
+				color: c.$grey;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+// FOOTER
+
+footer{
+	margin-top: 20px;
+
+	.wrapper{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.line{
+		width: 100vw;
+		border-top: 1px solid c.$lightgrey; 
+	}
+
+	p{
+		margin: 20px;
+	}
+}
+
+// MEDIA QUERIES
+
+@media (min-width: 992px) {
+	#navbar {
+		.navbar-box {
+			justify-content: space-between;
+		}
+
+		.hamburger {
+			display: none;
+		}
+
+		.nav-links {
+			position: static;
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+			transform: translateX(0);
+			margin-top: 0;
+			height: 100%;
+			width: 600px;
+
+			.nav-link {
+				display: inline-block;
+				padding: 2rem;
+				margin-right: 10px;
+				font-size: 18px;
+				transition: background-color 0.3s, color 0.3s;
+			}
+
+			.nav-link:hover {
+				background-color: c.$grey;
+				color: c.$main;
+			}
+		}
+
+	}
+
+	#home {
+		.hero-img {
+			background-image: url("/dist/img/jungle_hq.jpg");
+		}
+		.hero-text {
+			padding-left: 0;
+			font-size: 24px;
+		}
+	}
+
+	#aboutus {
+		padding-bottom: 40px;
+		
+		.section-content {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+
+
+			.section-image {
+				img {
+					width: 500px;
+				}
+			}
+
+			.section-text {
+				margin-top: 0;
+				padding-left: 50px;
+				h2 {
+					padding: 0 10px 0px 10px;
+				}
+
+				p {
+					width: 630px;
+					line-height: 2;
+				}
+			}
+		}
+	}
+
+	#adventure {
+		.hero-img {
+			height: 350px;
+			background-image: url("/dist/img/girl_hq.jpg");
+		}
+
+		.hero-shadow {
+			height: 350px;
+		}
+
+		.hero-text {
+			font-size: 34px;
+		}
+
+		h2 {
+			padding: 35px 120px 35px 120px;
+			border: 1px solid c.$main;
+		}
+	}
+
+	#offer {
+		.cards {
+			flex-direction: row;
+		}
+	}
+
+	#sitemap {
+		.wrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		.info {
+			display: flex;
+			flex-direction: row;
+			.aboutus,
+			.ourcompany,
+			.documents {
+				justify-content: flex-start;
+				align-items: flex-start;
+				margin: 50px;
+
+				h3 {
+					margin-bottom: 10px;
+				}
+
+				a {
+					margin: 10px 0 10px 0;
+				}
+			}
+		}
+	}
+
+	footer{
+		margin-top: 0px;
+		
+		p{
+			margin: 30px;
+		}
+	}
+}
